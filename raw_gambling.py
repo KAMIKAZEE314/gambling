@@ -40,6 +40,22 @@ def spin():
 	for row in range(3):
 		roll.append([])
 		for column in range(5):
+			random_num = int.from_bytes(os.urandom(5), "big") % 1000
+			symbol = None
+			if random_num in range(194):
+				symbol = 0
+			elif random_num in range(194, 388):
+				symbol = 1
+			elif random_num in range(388, 537):
+				symbol = 2
+			elif random_num in range(537, 686):
+				symbol = 3
+			elif random_num in range(686, 805):
+				symbol = 4
+			elif random_num in range(805, 924):
+				symbol = 5
+			elif random_num in range(924, 1000):
+				symbol = 6
 			roll[-1].append((int.from_bytes(os.urandom(1), "big") % 7, []))
 			
 	value = 0
