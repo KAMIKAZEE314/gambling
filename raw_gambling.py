@@ -40,7 +40,7 @@ def spin():
 	for row in range(3):
 		roll.append([])
 		for column in range(5):
-			roll[-1].append((int.from_bytes(os.urandom(1), "big") % 1, []))
+			roll[-1].append((int.from_bytes(os.urandom(1), "big") % 7, []))
 			
 	value = 0
 	for y, row in enumerate(patterns):
@@ -50,7 +50,8 @@ def spin():
 
 				was_canceled = False
 				check_symbol = None
-				for tile_x, tile_y in selected_tiles:
+				for tile in selected_tiles:
+					tile_y, tile_x = tile
 					if tile_x >= 0 and tile_x + x < 5 and tile_y >= 0 and tile_y + y < 3:
 						if not patterns.index(pattern) in roll[tile_y + y][tile_x + x][1]:
 							if not check_symbol:
@@ -67,13 +68,13 @@ def spin():
 						break
   
 				if not was_canceled:
-					for tile_x, tile_y in selected_tiles:
+					for tile_y, tile_x in selected_tiles:
 						symbol, excluded_patterns = roll[tile_y + y][tile_x + x]
-      
+	  
 						excluded_patterns += conflicting_patterns
 
 					value += num2value[check_symbol] * len(selected_tiles) * multiplier
-
+	
 	display_roll = []
 	for row in roll:
 		display_roll.append([])
