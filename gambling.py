@@ -14,13 +14,13 @@ app.add_middleware(
 )
 
 num2symbol = {
-    0: "L",
-    1: "C",
-    2: "K",
-    3: "B",
-    4: "D",
-    5: "T",
-    6: "7"
+    0: "SymbolLemon.png",
+    1: "SymbolCherry.png",
+    2: "SymbolClover.png",
+    3: "SymbolBell.png",
+    4: "SymbolDiamond.png",
+    5: "SymbolTreasureChest.png",
+    6: "SymbolSeven.png"
 }
 
 num2value = {
