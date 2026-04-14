@@ -107,8 +107,7 @@ def spin():
 
 	display_roll = []
 	for row in roll:
-		display_roll.append([])
 		for column in row:
-			display_roll[-1].append(num2symbol[column[0]])
+			display_roll.append(num2symbol[column[0]])
 
 	return {"roll": display_roll, "value": value}
