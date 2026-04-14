@@ -108,4 +108,4 @@ for row in roll:
 		print(column, end=" ")
 	print()
 	
-print(value)
+print("Value:", value)
